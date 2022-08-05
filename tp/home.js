@@ -1,16 +1,10 @@
 import { BASE_URL } from "./constants.js";
 import { createDropdown } from "./navBar/categories.js";
-import { createCard } from "./productCard/mainCard.js";
+import { getProductsList } from "./productService/productsApi.js";
 
-const productsUrl = BASE_URL + "products/";
+const productsUrl = BASE_URL + "products";
 
-axios.get(productsUrl).then(function(response) {
-    const products = response.data
-    
-    for(let product of products) {
-        createCard(product);
-    }
-})
+getProductsList(productsUrl);
 
 const $dropdownCategories = document.querySelector("#dropdownCategories");
 

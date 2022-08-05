@@ -16,7 +16,7 @@ export function createCard(product) {
 
     const price = priceCard(product.price);
 
-    const button = buttonCard();
+    const button = buttonCard(product.id);
 
     $mainCard.append(image, title, price, button);
 
