@@ -5,6 +5,20 @@ import { buttonCard } from "./buttonCard.js";
 
 export function createCard(product) {
 
-    
+    const $productsList = document.querySelector("#productsList");
 
+    const $mainCard = document.createElement("div");
+    $mainCard.classList.add("card")
+
+    const image = imageCard(product.imageUrl);
+
+    const title = titleCard(product.name);
+
+    const price = priceCard(product.price);
+
+    const button = buttonCard();
+
+    $mainCard.append(image, title, price, button);
+
+    $productsList.appendChild($mainCard);
 }
